@@ -1,0 +1,14 @@
+[Unit]
+Description=Buffet Detection System
+After=network.target
+
+[Service]
+Type=simple
+User=orange
+WorkingDirectory=/home/orange/buffet
+ExecStart=/home/orange/buffet/env/bin/python3 rknn_buffet.py config.json
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
